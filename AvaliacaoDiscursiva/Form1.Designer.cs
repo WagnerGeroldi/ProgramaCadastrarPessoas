@@ -1,7 +1,7 @@
 ﻿
 namespace AvaliacaoDiscursiva
 {
-    partial class Form1
+    partial class FormCadastro
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -53,11 +53,11 @@ namespace AvaliacaoDiscursiva
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(267, 9);
+            this.label1.Location = new System.Drawing.Point(234, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 25);
+            this.label1.Size = new System.Drawing.Size(355, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "AVALIAÇÃO DISCURSIVA";
+            this.label1.Text = "CADASTRO DE ENTREVISTADO";
             // 
             // LabelName
             // 
@@ -204,7 +204,7 @@ namespace AvaliacaoDiscursiva
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ações";
             // 
-            // Form1
+            // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +215,7 @@ namespace AvaliacaoDiscursiva
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FormCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AVALIAÇÃO DISCURSIVA | WAGNER LUCAS GEROLDI";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AvaliacaoDiscursiva
 {
-    public partial class Form1 : Form
+    public partial class FormCadastro : Form
     {
-        public Form1()
+        public FormCadastro()
         {
             InitializeComponent();
         }
@@ -136,5 +136,6 @@ namespace AvaliacaoDiscursiva
         {
             LimparGrid();
         }
+
     }
 }

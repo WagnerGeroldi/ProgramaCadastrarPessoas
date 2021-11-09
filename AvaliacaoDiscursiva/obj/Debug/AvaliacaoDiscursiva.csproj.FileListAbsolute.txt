@@ -2,10 +2,12 @@ C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursi
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\bin\Debug\AvaliacaoDiscursiva.exe
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\bin\Debug\AvaliacaoDiscursiva.pdb
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.csproj.AssemblyReference.cache
-C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.Form1.resources
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.Properties.Resources.resources
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.csproj.GenerateResource.cache
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.csproj.CoreCompileInputs.cache
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.exe
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.pdb
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.FormResultado.resources
+C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.FormCadastro.resources
+C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.FormPrincipal.resources
+C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.FormSobre.resources

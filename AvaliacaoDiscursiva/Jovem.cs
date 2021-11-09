@@ -42,7 +42,6 @@ namespace AvaliacaoDiscursiva
             _Sexo = sexo;
             _SituacaoTrabalhista = situacaoTrabalhista;
         }
-
         #endregion
 
 
@@ -90,6 +89,7 @@ namespace AvaliacaoDiscursiva
         {
             return jovens;
         }
+
 
         
         #region lista automatica
