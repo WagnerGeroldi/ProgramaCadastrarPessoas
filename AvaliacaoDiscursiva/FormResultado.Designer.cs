@@ -343,6 +343,7 @@ namespace AvaliacaoDiscursiva
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ButtonCloseResult);
             this.Controls.Add(this.labelTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormResultado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

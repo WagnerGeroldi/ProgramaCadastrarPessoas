@@ -24,7 +24,10 @@ namespace AvaliacaoDiscursiva
 
         public Jovem()
         {
-
+            _Id = 0;
+            _Nome = "";
+            _Sexo = Sexo.Masculino;
+            _SituacaoTrabalhista = SituacaoTrabalhista.Empregrado;
         }
 
         public Jovem(int id, string nome, Sexo sexo, SituacaoTrabalhista situacaoTrabalhista)
@@ -41,6 +44,15 @@ namespace AvaliacaoDiscursiva
             _Nome = nome;
             _Sexo = sexo;
             _SituacaoTrabalhista = situacaoTrabalhista;
+        }
+
+        public Jovem(int id)
+        {
+            Jovem jTemp = jovens.Find(jovem => jovem.IdJovem == id);
+            _Id = jTemp.IdJovem;
+            _Nome = jTemp.NomeJovem;
+            _Sexo = jTemp.SexoJovem;
+            _SituacaoTrabalhista = jTemp.SituacaoTrabalhistaJovem;
         }
         #endregion
 
@@ -88,6 +100,22 @@ namespace AvaliacaoDiscursiva
         public static List<Jovem> Consultar()
         {
             return jovens;
+        }
+
+        public void Alterar()
+        {
+            int i;
+            i = jovens.FindIndex(jovem => jovem.IdJovem == _Id);
+            jovens[i].NomeJovem = _Nome;
+            jovens[i].SexoJovem = _Sexo;
+            jovens[i].SituacaoTrabalhistaJovem = _SituacaoTrabalhista;
+        }
+
+        public static void Excluir(int id)
+        {
+            int i;
+            i = jovens.FindIndex(jovem => jovem.IdJovem == id);
+            jovens.Remove(jovens[i]);
         }
 
 

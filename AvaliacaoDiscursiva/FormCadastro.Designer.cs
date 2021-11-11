@@ -43,7 +43,11 @@ namespace AvaliacaoDiscursiva
             this.ComboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.buttonLimparLista = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonExcluir = new System.Windows.Forms.Button();
+            this.TextBoxId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelInstrucao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridJovens)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,7 +67,7 @@ namespace AvaliacaoDiscursiva
             // 
             this.LabelName.AutoSize = true;
             this.LabelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelName.Location = new System.Drawing.Point(6, 24);
+            this.LabelName.Location = new System.Drawing.Point(6, 55);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(53, 18);
             this.LabelName.TabIndex = 1;
@@ -73,7 +77,7 @@ namespace AvaliacaoDiscursiva
             // 
             this.LabelSex.AutoSize = true;
             this.LabelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSex.Location = new System.Drawing.Point(6, 63);
+            this.LabelSex.Location = new System.Drawing.Point(6, 94);
             this.LabelSex.Name = "LabelSex";
             this.LabelSex.Size = new System.Drawing.Size(46, 18);
             this.LabelSex.TabIndex = 2;
@@ -83,7 +87,7 @@ namespace AvaliacaoDiscursiva
             // 
             this.LabelEmployee.AutoSize = true;
             this.LabelEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelEmployee.Location = new System.Drawing.Point(6, 99);
+            this.LabelEmployee.Location = new System.Drawing.Point(6, 130);
             this.LabelEmployee.Name = "LabelEmployee";
             this.LabelEmployee.Size = new System.Drawing.Size(146, 18);
             this.LabelEmployee.TabIndex = 3;
@@ -91,7 +95,8 @@ namespace AvaliacaoDiscursiva
             // 
             // GridJovens
             // 
-            this.GridJovens.AllowUserToOrderColumns = true;
+            this.GridJovens.AllowUserToAddRows = false;
+            this.GridJovens.AllowUserToDeleteRows = false;
             this.GridJovens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.GridJovens.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.GridJovens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -107,16 +112,19 @@ namespace AvaliacaoDiscursiva
             this.GridJovens.DefaultCellStyle = dataGridViewCellStyle1;
             this.GridJovens.Location = new System.Drawing.Point(149, 274);
             this.GridJovens.Name = "GridJovens";
+            this.GridJovens.ReadOnly = true;
             this.GridJovens.Size = new System.Drawing.Size(458, 164);
             this.GridJovens.TabIndex = 4;
+            this.GridJovens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridJovens_CellDoubleClick);
+            this.GridJovens.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridJovens_CellMouseClick);
             // 
             // ButtonAdd
             // 
-            this.ButtonAdd.Location = new System.Drawing.Point(9, 149);
+            this.ButtonAdd.Location = new System.Drawing.Point(9, 169);
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(101, 33);
             this.ButtonAdd.TabIndex = 5;
-            this.ButtonAdd.Text = "Adicionar";
+            this.ButtonAdd.Text = "Salvar";
             this.ButtonAdd.UseVisualStyleBackColor = true;
             this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
@@ -145,7 +153,7 @@ namespace AvaliacaoDiscursiva
             // 
             // TextBoxName
             // 
-            this.TextBoxName.Location = new System.Drawing.Point(155, 22);
+            this.TextBoxName.Location = new System.Drawing.Point(155, 53);
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Size = new System.Drawing.Size(191, 20);
             this.TextBoxName.TabIndex = 8;
@@ -153,7 +161,7 @@ namespace AvaliacaoDiscursiva
             // ComboBoxSex
             // 
             this.ComboBoxSex.FormattingEnabled = true;
-            this.ComboBoxSex.Location = new System.Drawing.Point(155, 60);
+            this.ComboBoxSex.Location = new System.Drawing.Point(155, 91);
             this.ComboBoxSex.Name = "ComboBoxSex";
             this.ComboBoxSex.Size = new System.Drawing.Size(137, 21);
             this.ComboBoxSex.TabIndex = 9;
@@ -161,7 +169,7 @@ namespace AvaliacaoDiscursiva
             // ComboBoxEmployee
             // 
             this.ComboBoxEmployee.FormattingEnabled = true;
-            this.ComboBoxEmployee.Location = new System.Drawing.Point(155, 96);
+            this.ComboBoxEmployee.Location = new System.Drawing.Point(155, 127);
             this.ComboBoxEmployee.Name = "ComboBoxEmployee";
             this.ComboBoxEmployee.Size = new System.Drawing.Size(137, 21);
             this.ComboBoxEmployee.TabIndex = 10;
@@ -178,6 +186,9 @@ namespace AvaliacaoDiscursiva
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonExcluir);
+            this.groupBox1.Controls.Add(this.TextBoxId);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.LabelName);
             this.groupBox1.Controls.Add(this.LabelSex);
             this.groupBox1.Controls.Add(this.LabelEmployee);
@@ -192,6 +203,34 @@ namespace AvaliacaoDiscursiva
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
             // 
+            // buttonExcluir
+            // 
+            this.buttonExcluir.Location = new System.Drawing.Point(116, 169);
+            this.buttonExcluir.Name = "buttonExcluir";
+            this.buttonExcluir.Size = new System.Drawing.Size(101, 33);
+            this.buttonExcluir.TabIndex = 15;
+            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
+            // 
+            // TextBoxId
+            // 
+            this.TextBoxId.Enabled = false;
+            this.TextBoxId.Location = new System.Drawing.Point(155, 20);
+            this.TextBoxId.Name = "TextBoxId";
+            this.TextBoxId.Size = new System.Drawing.Size(31, 20);
+            this.TextBoxId.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 18);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "ID:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ButtonResult);
@@ -204,11 +243,23 @@ namespace AvaliacaoDiscursiva
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ações";
             // 
+            // labelInstrucao
+            // 
+            this.labelInstrucao.AutoSize = true;
+            this.labelInstrucao.Location = new System.Drawing.Point(43, 274);
+            this.labelInstrucao.Name = "labelInstrucao";
+            this.labelInstrucao.Size = new System.Drawing.Size(100, 26);
+            this.labelInstrucao.TabIndex = 15;
+            this.labelInstrucao.Text = "Para editar um item,\r\n clique 2x nele";
+            this.labelInstrucao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelInstrucao.Visible = false;
+            // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelInstrucao);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GridJovens);
@@ -244,6 +295,10 @@ namespace AvaliacaoDiscursiva
         private System.Windows.Forms.Button buttonLimparLista;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox TextBoxId;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonExcluir;
+        private System.Windows.Forms.Label labelInstrucao;
     }
 }
 

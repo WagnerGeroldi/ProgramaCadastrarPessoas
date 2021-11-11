@@ -31,9 +31,27 @@ namespace AvaliacaoDiscursiva
                 MessageBox.Show("O nome não pode ficar vazio!", "Aviso",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
+                return;
             }
-            else
-            {
+
+                if (TextBoxId.Text.Length != 0)
+                {
+                    Jovem alterarJovem = new Jovem(
+                                    int.Parse(TextBoxId.Text),
+                                    TextBoxName.Text,
+                                    (Jovem.Sexo)ComboBoxSex.SelectedIndex,
+                                    (Jovem.SituacaoTrabalhista)ComboBoxEmployee.SelectedIndex
+                                    );
+                    alterarJovem.Alterar();
+                    LimparCampos();
+                    PreencherGrid(Jovem.Consultar());
+
+                    MessageBox.Show("Dados Alterados com sucesso", "Aviso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return;
+
+                }
                 Jovem jovem = new Jovem(
                                 TextBoxName.Text,
                                 (Jovem.Sexo)ComboBoxSex.SelectedIndex,
@@ -43,15 +61,15 @@ namespace AvaliacaoDiscursiva
                 GridJovens.DataSource = "";
                 GridJovens.DataSource = Jovem.Consultar();
                 LimparCampos();
+                LabelInstrucao();
                 MessageBox.Show("Dados Cadastrados com sucesso", "Aviso",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-            }
-
         }
 
         private void LimparCampos()
         {
+            TextBoxId.Text = "";
             TextBoxName.Text = "";
             ComboBoxSex.SelectedIndex = 0;
             ComboBoxEmployee.SelectedIndex = 0;
@@ -68,7 +86,7 @@ namespace AvaliacaoDiscursiva
                 {
                     GridJovens.DataSource = null;
                     Jovem.Limpar();
-                    GridJovens.DataSource = Jovem.Consultar();
+                    PreencherGrid(Jovem.Consultar());
                     MessageBox.Show("Lista apagada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -88,8 +106,8 @@ namespace AvaliacaoDiscursiva
                 if (result == DialogResult.Yes)
                 {
                     Jovem.Preencher();
-                    GridJovens.DataSource = "";
-                    GridJovens.DataSource = Jovem.Consultar();
+                    PreencherGrid(Jovem.Consultar());
+                    LabelInstrucao();
                 }
             }
             else
@@ -102,8 +120,8 @@ namespace AvaliacaoDiscursiva
                 {
                     LimparGrid();
                     Jovem.Preencher();
-                    GridJovens.DataSource = "";
-                    GridJovens.DataSource = Jovem.Consultar();
+                    PreencherGrid(Jovem.Consultar());
+                    LabelInstrucao();
                 }
             }
         }
@@ -135,7 +153,89 @@ namespace AvaliacaoDiscursiva
         private void buttonLimparLista_Click(object sender, EventArgs e)
         {
             LimparGrid();
+            LabelInstrucao();
         }
 
+        private void GridJovens_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (GridJovens.Rows.Count != 0)
+            {
+                const string message = "Tem certeza que deseja editar o registro?";
+                var result = MessageBox.Show(message, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    int id;
+                    id = (int)GridJovens["IdJovem", e.RowIndex].Value;
+
+                    Jovem jovem = new Jovem(id);
+                    TextBoxId.Text = jovem.IdJovem.ToString();
+                    TextBoxName.Text = jovem.NomeJovem.ToString();
+                    ComboBoxSex.SelectedIndex = (int)jovem.SexoJovem;
+                    ComboBoxEmployee.SelectedIndex = (int)jovem.SituacaoTrabalhistaJovem;
+                }
+            } else
+
+                {
+                    const string message2 = "Você não pode editar pois a lista está vazia!";
+                    MessageBox.Show(message2, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+
+
+        }
+
+
+        private void PreencherGrid(List<Jovem> lista)
+        {
+            GridJovens.DataSource = new BindingList<Jovem>(lista);
+
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (GridJovens.Rows.Count == 0)
+            {
+                const string message = "A lista está vazia! Não existe itens para excluir.";
+                MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return;
+            }
+                if (TextBoxId.Text.Length !=0 )
+            {
+                const string message = "Tem certeza que deseja excluir o registro?";
+                var result = MessageBox.Show(message, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    Jovem.Excluir(int.Parse(TextBoxId.Text));
+                    LimparCampos();
+                    PreencherGrid(Jovem.Consultar());
+                    MessageBox.Show("Entrevistado excluído com sucesso!", "Aviso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                }
+            } else
+            {
+                const string message = "Dê um clique duplo no item que deseja excluir!";
+                MessageBox.Show(message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        public void LabelInstrucao()
+        {
+            if (GridJovens.Rows.Count != 0)
+            {
+                labelInstrucao.Visible = true;
+            } else
+            {
+                labelInstrucao.Visible = false;
+            }
+        }
+
+        private void GridJovens_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            return;
+        }
     }
 }
