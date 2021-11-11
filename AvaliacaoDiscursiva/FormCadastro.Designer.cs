@@ -116,7 +116,6 @@ namespace AvaliacaoDiscursiva
             this.GridJovens.Size = new System.Drawing.Size(458, 164);
             this.GridJovens.TabIndex = 4;
             this.GridJovens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridJovens_CellDoubleClick);
-            this.GridJovens.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridJovens_CellMouseClick);
             // 
             // ButtonAdd
             // 

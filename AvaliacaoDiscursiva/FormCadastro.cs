@@ -58,8 +58,7 @@ namespace AvaliacaoDiscursiva
                                 (Jovem.SituacaoTrabalhista)ComboBoxEmployee.SelectedIndex
                                 );
                 jovem.Incluir();
-                GridJovens.DataSource = "";
-                GridJovens.DataSource = Jovem.Consultar();
+                PreencherGrid(Jovem.Consultar());
                 LimparCampos();
                 LabelInstrucao();
                 MessageBox.Show("Dados Cadastrados com sucesso", "Aviso",
@@ -158,7 +157,7 @@ namespace AvaliacaoDiscursiva
 
         private void GridJovens_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (GridJovens.Rows.Count != 0)
+            if (e.RowIndex >= 0)
             {
                 const string message = "Tem certeza que deseja editar o registro?";
                 var result = MessageBox.Show(message, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -223,19 +222,9 @@ namespace AvaliacaoDiscursiva
         }
 
         public void LabelInstrucao()
-        {
-            if (GridJovens.Rows.Count != 0)
-            {
-                labelInstrucao.Visible = true;
-            } else
-            {
-                labelInstrucao.Visible = false;
-            }
-        }
 
-        private void GridJovens_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            return;
+        {   
+            labelInstrucao.Visible = GridJovens.Rows.Count != 0;
         }
     }
 }
