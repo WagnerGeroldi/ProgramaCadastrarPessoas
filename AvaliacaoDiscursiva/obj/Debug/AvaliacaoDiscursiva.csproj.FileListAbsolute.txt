@@ -11,3 +11,6 @@ C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursi
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.FormCadastro.resources
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.FormPrincipal.resources
 C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\obj\Debug\AvaliacaoDiscursiva.FormSobre.resources
+C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\bin\Debug\itextsharp.dll
+C:\Users\Wagner Geroldi\Desktop\DISCURSIVA\AvaliacaoDiscursiva\AvaliacaoDiscursiva\bin\Debug\itextsharp.xml

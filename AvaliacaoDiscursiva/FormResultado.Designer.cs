@@ -54,6 +54,7 @@ namespace AvaliacaoDiscursiva
             this.TextBoxHomemDesempregado = new System.Windows.Forms.TextBox();
             this.TextBoxMulherEmpregada = new System.Windows.Forms.TextBox();
             this.TextBoxMulherDesempregada = new System.Windows.Forms.TextBox();
+            this.buttonGerarPDF = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +130,7 @@ namespace AvaliacaoDiscursiva
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonGerarPDF);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -335,6 +337,16 @@ namespace AvaliacaoDiscursiva
             this.TextBoxMulherDesempregada.TabIndex = 8;
             this.TextBoxMulherDesempregada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // buttonGerarPDF
+            // 
+            this.buttonGerarPDF.Location = new System.Drawing.Point(411, 214);
+            this.buttonGerarPDF.Name = "buttonGerarPDF";
+            this.buttonGerarPDF.Size = new System.Drawing.Size(146, 34);
+            this.buttonGerarPDF.TabIndex = 28;
+            this.buttonGerarPDF.Text = "Gerar PDF";
+            this.buttonGerarPDF.UseVisualStyleBackColor = true;
+            this.buttonGerarPDF.Click += new System.EventHandler(this.buttonGerarPDF_Click);
+            // 
             // FormResultado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,5 +395,6 @@ namespace AvaliacaoDiscursiva
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonGerarPDF;
     }
 }
