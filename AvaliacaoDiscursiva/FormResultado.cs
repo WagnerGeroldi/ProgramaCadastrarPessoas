@@ -90,6 +90,11 @@ namespace AvaliacaoDiscursiva
                 Paragraph content = new Paragraph();
                 Paragraph quantidadeEntrevistados = new Paragraph();
 
+                //formatacao título
+                BaseColor red = BaseColor.RED;
+                var fonteTitulo = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18, red);
+                title.Alignment = Element.ALIGN_CENTER;
+                title.Font = fonteTitulo;
 
                 //conteudos
                 iTextSharp.text.pdf.draw.VerticalPositionMark linha = new iTextSharp.text.pdf.draw.LineSeparator();
@@ -104,8 +109,7 @@ namespace AvaliacaoDiscursiva
                     + " e corresponde a " + porcentagemHomemDesempregado + "%. \n");
                 quantidadeEntrevistados.Add("O total de entrevistados foi: " + totalEntrevistados + " pessoas.");
 
-                //formatacao
-                title.Alignment = Element.ALIGN_CENTER;
+                
 
                 //adicionar conteudo
                 doc.Add(title);
